@@ -44,5 +44,11 @@ for line in runProcess([
     print line
     errors = True
 
+if errors:
+    sys.stdin = open('/dev/tty')
+    answer = raw_input('Commit anyway? [N/y] ')
+    if answer.strip().lower().startswith('y'):
+        sys.exit(0)
+
 # Exit with correct status code
 sys.exit(errors)
