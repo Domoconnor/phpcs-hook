@@ -41,7 +41,6 @@ for line in runProcess([
     '--standard='+PHPCS_STANDARD,
     '--warning-severity='+PHPCS_SEVERITY,
     '--ignore='+PHPCS_IGNORE] + staged_files):
-    # Print to stderr so we get the correct exit code
     print line
     errors = True
 
